@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>CMI Board Home</h1>
+  <p>Welcome to CMI, a website developed by <em>Connor Cantrell</em></p>
+  {% include "work-orders-in-progress.html" with obj=work_orders_in_progress %}
+  {% include "labor-today.html" with obj=labor_today %}
+{% endblock %}

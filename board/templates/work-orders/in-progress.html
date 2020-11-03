@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Work Orders In Progress</h1>
+  {% if work-orders-in-progress %}
+  <ul>
+    {% for item in work-orders-in-progress %}
+      <li>
+        <a href="{{ book.get_absolute_url }}">{{ item.number }}</a> ({{item.description}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no work orders in progress</p>
+  {% endif %}       
+{% endblock %}

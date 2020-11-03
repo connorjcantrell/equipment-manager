@@ -1,0 +1,22 @@
+
+
+
+{% block content %}
+  <h3>Today's Labor</h3>
+  {% if labor_today %}
+  <table>
+    {% for item in labor_today %}
+        <tr>
+            <td>{{ item.work_order.number }}</td>
+            <td>{{ item.work_order.location.address}}</td>
+            <td>{{ item.amount }}</td>
+            <td>{{ item.rates }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>You have not logged any hours today</p>
+    <a href="google.com">Add labor</a>
+  {% endif %}       
+{% endblock %}
+

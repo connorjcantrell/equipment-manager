@@ -1,0 +1,18 @@
+
+{% block content %}
+  <h3>Work Orders: In Progress</h3>
+  {% if work_orders_in_progress %}
+  <table>
+    {% for item in work_orders_in_progress %}
+        <tr>
+            <td>{{ item.number }}</td>
+            <td>{{ item.location.street }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>There are no work orders in progress</p>
+  {% endif %}       
+{% endblock %}
